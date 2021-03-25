@@ -1,0 +1,4 @@
+rootProject.name = 'Prinscirpt2'
+
+include 'lexer','tokens'
+
