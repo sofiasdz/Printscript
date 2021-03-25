@@ -24,13 +24,15 @@ public class PSLexer  implements Lexer{
 
 
     private List<String> lineToChars(String line){
-        List<String> chars = new ArrayList<>();
-        chars= Arrays.asList(line.split(""));
+        List<String> chars = Arrays.asList(line.split("(?!^)"));
         return chars;
     }
 
     private List<Token> lineToToken(List<String> line){
         String currentWord = "";
+        for (int i = 0; i <line.size() ; i++) {
+            System.out.println(line.get(i));
+        }
         for (int i = 0; i <line.size() ; i++) {
             if (line.get(i).equals(" ")){
                 System.out.println(currentWord);
