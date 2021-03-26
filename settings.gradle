@@ -1,4 +1,4 @@
 rootProject.name = 'Prinscirpt2'
 
-include 'lexer','tokens'
+include 'lexer','tokens','syntactic_analyzer','ast_node'
 

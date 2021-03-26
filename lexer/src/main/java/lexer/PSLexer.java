@@ -10,16 +10,12 @@ import java.util.Optional;
 public class PSLexer  implements Lexer{
     @Override
     public List<Token> identifyTokens(List<String> text) {
-
-
         List<Token> tokens= new ArrayList<>();
         for (int i = 0; i <text.size() ; i++) {
             //line to char
             List<String> currentLine = lineToChars(text.get(i));
             lineToToken(currentLine,i);
-
         }
-
         return tokens;
     }
 
