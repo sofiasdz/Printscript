@@ -28,4 +28,24 @@ public class LexerTest {
         System.out.println("finished");
 
     }
+    @Test
+    public void test03() {
+        String line1 = "let x : number = 12;";
+        List<String> list= new ArrayList();
+        list.add(line1);
+        PSLexer psLexer= new PSLexer();
+        List<Token> tokenList = psLexer.identifyTokens(list);
+        System.out.println("finished");
+
+    }
+    @Test
+    public void test04() {
+        String line1 = "let x : number = 12.04;";
+        List<String> list= new ArrayList();
+        list.add(line1);
+        PSLexer psLexer= new PSLexer();
+        List<Token> tokenList = psLexer.identifyTokens(list);
+        System.out.println("finished");
+
+    }
 }
