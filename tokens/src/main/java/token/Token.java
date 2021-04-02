@@ -34,7 +34,7 @@ public class Token {
     }
     public static Token integer(int ln, int cn,String value){ return new Token(TokenType.INTEGER,value,cn,cn+value.length()-1,ln,ln);}
 
-    //public static Token float(int ln, int cn,String value){ return new Token(TokenType.FLOAT,value,cn,cn+value.length()-1,ln,ln);}
+    public static Token floatingPoint(int ln, int cn,String value){ return new Token(TokenType.FLOATING_POINT,value,cn,cn+value.length()-1,ln,ln);}
 
     public static Token assignation(int ln, int cn){
         return new Token(TokenType.ASSIGNATION,"=",cn,cn,ln,ln);
@@ -78,7 +78,7 @@ enum TokenType {
     STRING,
     NUMBER_TYPE,
     INTEGER,
-    FLOAT,
+    FLOATING_POINT,
     ASSIGNATION,
     IDENTIFIER,
     COLON,
