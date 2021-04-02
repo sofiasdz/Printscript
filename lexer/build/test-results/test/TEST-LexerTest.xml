@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LexerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-02T20:21:58" hostname="MacBook-Pro.fibertel.com.ar" time="0.007">
+  <properties/>
+  <testcase name="test04" classname="LexerTest" time="0.007"/>
+  <system-out><![CDATA[finished
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
