@@ -17,17 +17,24 @@ public class Token {
         this.endingLine = endingLine;
     }
 
+    public TokenType getType() {
+        return type;
+    }
+
     public static Token let(int ln, int cn){
         return new Token(TokenType.LET,"let",cn,cn+2,ln,ln);
     }
 
-    public static Token string(int ln, int cn){
-        return new Token(TokenType.STRING,"string",cn,cn+5,ln,ln);
+    public static Token stringType(int ln, int cn){
+        return new Token(TokenType.STRING_TYPE,"string",cn,cn+5,ln,ln);
     }
 
-    public static Token integer(int ln, int cn) {
-        return new Token(TokenType.INTEGER,"integer",cn,cn+6,ln,ln);
+    public static Token numberType(int ln, int cn) {
+        return new Token(TokenType.NUMBER_TYPE,"number",cn,cn+6,ln,ln);
     }
+    public static Token integer(int ln, int cn,String value){ return new Token(TokenType.INTEGER,value,cn,cn+value.length()-1,ln,ln);}
+
+    //public static Token float(int ln, int cn,String value){ return new Token(TokenType.FLOAT,value,cn,cn+value.length()-1,ln,ln);}
 
     public static Token assignation(int ln, int cn){
         return new Token(TokenType.ASSIGNATION,"=",cn,cn,ln,ln);
@@ -36,6 +43,8 @@ public class Token {
     public static Token colon(int ln, int cn){
         return new Token(TokenType.COLON,":",cn,cn,ln,ln);
     }
+
+    public static Token string(int ln, int cn,String value){ return new Token(TokenType.STRING,value,cn,cn+value.length()-1,ln,ln);}
 
     public static Token semicolon(int ln, int cn){
         return new Token(TokenType.SEMICOLON,";",cn,cn,ln,ln);
@@ -48,11 +57,28 @@ public class Token {
     public String getValue() {
         return value;
     }
+
+    public static Token addition(int ln, int cn){
+        return new Token(TokenType.ADDITION,"+",cn,cn,ln,ln);
+    }
+    public static Token substraction(int ln, int cn){
+        return new Token(TokenType.SUBSTRACTION,"-",cn,cn,ln,ln);
+    }
+    public static Token multiplication(int ln, int cn){
+        return new Token(TokenType.MULTIPLICATION,"*",cn,cn,ln,ln);
+    }
+    public static Token division(int ln, int cn){
+        return new Token(TokenType.DIVISION,"/",cn,cn,ln,ln);
+    }
+
 }
 
 enum TokenType {
+    STRING_TYPE,
     STRING,
+    NUMBER_TYPE,
     INTEGER,
+    FLOAT,
     ASSIGNATION,
     IDENTIFIER,
     COLON,
